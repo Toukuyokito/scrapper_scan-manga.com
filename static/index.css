@@ -1,0 +1,56 @@
+/*Duplicats*/
+body {
+    background: rgb(221, 205, 190);
+    margin: 0%;
+    }
+  
+#results > a {
+  text-decoration: none;
+  display: block;
+  color: black;
+}
+
+#results > a:visited
+{
+  color: black;
+}
+
+#results > a:hover
+{
+  background-color: rgba(34, 50, 65, 0.50);
+}
+/*Duplicats*/
+
+table {
+  margin: 0%;
+  margin-top: 1em;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid rgb(31, 29, 31);
+}
+
+thead th:nth-child(1) {
+  width: 20%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 20%;
+}
+
+thead th:nth-child(4) {
+  width: 40%;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid rgb(31, 29, 31);
+}
+
+td {
+  text-align: center;
+}

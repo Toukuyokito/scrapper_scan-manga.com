@@ -1,0 +1,43 @@
+/*Duplicats*/
+body {
+    background: rgb(221, 205, 190);
+    margin: 0%;
+    font-size: 1em;
+}
+  
+#results > a {
+  text-decoration: none;
+  display: block;
+  color: black;
+}
+
+#results > a:visited
+{
+  color: black;
+}
+
+#results > a:hover
+{
+  background-color: rgba(34, 50, 65, 0.50);
+}
+/*Duplicats*/
+
+/*Form main characteristic*/
+form {
+    margin: 0%;
+    padding: 0%;
+    
+}
+
+fieldset {
+    margin-bottom: 2em;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+#inputUrl {
+    width: 50%;
+}
+
+#inputShort {
+    width: 45%;
+}

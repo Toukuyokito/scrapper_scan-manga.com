@@ -1,0 +1,38 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='static/administration.css' />
+    <title>Administration</title>
+</head>
+<body>
+    
+    <a href="/">Retour à la page de scan</a>
+    <fieldset>
+        <legend>Ajouter une série</legend>
+        <form method="POST" target="_self" action="/addSerie">
+            <input type="url"  placeholder="url"   name="url" id="inputUrl" required>
+            <input type="text" placeholder="short" name="short" id="inputShort" required>
+            <input type="submit" value="ajouter">
+        </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>Suprimer une série</legend>
+    
+        <form method="POST" target="_self" action="/deleteSerie">
+
+            <select name="series_to_delete" multiple="yes" size="3">
+                <option disabled>Veuillez selectioner une/des série(s)</option>
+                {% for serie in series %}
+                    <option value="{{serie}}">{{serie}}</option>
+                {% endfor %}
+
+            </select >
+
+            <input type="submit" value="supprimer">
+        </form>
+    </fieldset>
+</body>
+</html>
