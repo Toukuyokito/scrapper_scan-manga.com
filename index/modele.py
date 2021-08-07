@@ -61,7 +61,7 @@ def get_new_episode(bdd_location:str) -> dict:
     connection.close()
 
     if len(serie["series"]) == 0:
-        serie["series"] = [__make_serie_dict("Pas de nouveau épisode", "", "", "")]
+        serie["series"] = [__make_serie_dict("Pas de nouvel épisode", "", "", "")]
 
 
     return serie
