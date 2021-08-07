@@ -19,7 +19,19 @@ def __isolate_episode_number(data:str) -> int:
 
 def __update_serie(cursor, short:str, episode_number:int) -> None:
     querry = cursor.execute("UPDATE urls SET episode_number = ? WHERE short = ? ", (episode_number, short))
-    
+
+
+def __make_serie_dict(short:str, 
+                    url:str, 
+                    episode_number:int, 
+                    older_episode_number:int) -> dict :
+
+    return {"short"                : short,
+            "url"                  : url,
+            "episode_number"       : episode_number,
+            "older_episode_number" : older_episode_number 
+            }
+
 
 def get_new_episode(bdd_location:str) -> dict:
     """
@@ -40,16 +52,16 @@ def get_new_episode(bdd_location:str) -> dict:
         number_of_episode_from_web = __isolate_episode_number(serie_informations)
 
         if number_of_episode_from_web > response[2]:
-            buffer.append( {"short"                : response[0],
-                            "url"                  : response[1],
-                            "episode_number"       : number_of_episode_from_web,
-                            "older_episode_number" : response[2] }
-                         )
+            buffer.append(__make_serie_dict(response[0], response[1], number_of_episode_from_web, response[2]))
     
             __update_serie(cursor, response[0], number_of_episode_from_web)
             connection.commit()
     
-    serie["serie"] = buffer
+    serie["series"] = buffer
     connection.close()
-    
+
+    if len(serie["series"]) == 0:
+        serie["series"] = [__make_serie_dict("Pas de nouveau épisode", "", "", "")]
+
+
     return serie
