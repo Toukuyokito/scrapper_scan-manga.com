@@ -9,19 +9,23 @@
 <body>
     
     <a href="/">Retour à la page de scan</a>
+    <hr>
     <fieldset>
         <legend>Ajouter une série</legend>
-        <form method="POST" target="_self" action="/addSerie">
-            <input type="url"  placeholder="url"   name="url" id="inputUrl" required>
-            <input type="text" placeholder="short" name="short" id="inputShort" required>
-            <input type="submit" value="ajouter">
+        <form method="POST" target="_self" action="/addSerie" id="add-form">
+            <div class="item item1"><input type="url"  placeholder="url"   name="url" id="inputUrl" required></div>
+            <div class="item item2"><input type="text" placeholder="short" name="short" id="inputShort" required></div>
+            <div class="item item3"><input type="submit" value="ajouter"></div>
+            
+            
+            
         </form>
     </fieldset>
 
     <fieldset>
         <legend>Suprimer une série</legend>
     
-        <form method="POST" target="_self" action="/deleteSerie">
+        <form method="POST" target="_self" action="/deleteSerie" id="del-form">
 
             <select name="series_to_delete" multiple="yes" size="3">
                 <option disabled>Veuillez selectioner une/des série(s)</option>

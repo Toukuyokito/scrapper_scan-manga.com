@@ -1,25 +1,37 @@
-/*Duplicats*/
+
+:root {
+--text-size: clamp(1rem,  -0.8750rem + 8.3333vw, 2rem);
+--text-color :#383533; 
+}
+
 body {
     background: rgb(221, 205, 190);
     margin: 0%;
-    }
-  
-#results > a {
+}
+
+button {
+  font-size: var(--text-size);
+  margin-right: 12px;
+}
+
+a {
+  font-family: 'Nova Mono', monospace;
   text-decoration: none;
-  display: block;
-  color: black;
+  color: var(--text-color) ;
+  font-size: var(--text-size);
 }
 
-#results > a:visited
+a:hover
 {
-  color: black;
+  background-color: rgba(147, 162, 175, 0.5);
 }
 
-#results > a:hover
-{
-  background-color: rgba(34, 50, 65, 0.50);
+footer {
+  display: flex;
+  border-bottom: 1px solid #000;;
+  
 }
-/*Duplicats*/
+
 
 table {
   margin: 0%;
@@ -28,6 +40,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   border: 1px solid rgb(31, 29, 31);
+  font: optional;
 }
 
 thead th:nth-child(1) {

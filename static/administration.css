@@ -1,43 +1,56 @@
-/*Duplicats*/
-body {
-    background: rgb(221, 205, 190);
-    margin: 0%;
-    font-size: 1em;
+:root {
+  --text-size: clamp(1rem,  -0.8750rem + 8.3333vw, 2rem);
+  --text-color :#383533;  
 }
   
-#results > a {
+  body {
+      background: #DDCDBE;
+      margin: 0%;
+  }
+  
+a {
+  font-family: 'Nova Mono', monospace;
   text-decoration: none;
-  display: block;
-  color: black;
+  color:  var(--text-color);
+  font-size: var(--text-size);
 }
 
-#results > a:visited
-{
-  color: black;
-}
-
-#results > a:hover
-{
-  background-color: rgba(34, 50, 65, 0.50);
-}
-/*Duplicats*/
-
-/*Form main characteristic*/
 form {
-    margin: 0%;
-    padding: 0%;
-    
+  display: flex;
 }
 
 fieldset {
-    margin-bottom: 2em;
-    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  color: var(--text-color);
 }
 
-#inputUrl {
-    width: 50%;
+legend {
+  font-size:  var(--text-size);
+}
+#add-form input[type="text"], #add-form input[type="url"]{
+  display: inline-block;
+  width: 100%;
+  align-items: baseline;
+  justify-content: baseline;
 }
 
-#inputShort {
-    width: 45%;
+a:hover {
+  background-color: rgba(147, 162, 175, 0.5);
 }
+
+#add-form .item1 {flex: 2;}
+#add-form .item2 {flex: 2;}
+#add-form .item3 {flex: 1;}
+
+#del-form { 
+  flex-direction: column;
+
+}
+
+#del-form .item1 {
+  align-self: stretch;
+}
+
+
+#del-form input[type="submit"] {align-self: center;}
+
